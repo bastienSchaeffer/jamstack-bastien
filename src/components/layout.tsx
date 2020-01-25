@@ -37,6 +37,7 @@ const Layout: React.FC = ({ children }) => {
             maxWidth: 960,
             padding: `230px 1.0875rem 1.45rem`,
             paddingTop: 0,
+            // minHeight: `calc(100vh - 400px)`,
           }}
         >
           <main>{children}</main>

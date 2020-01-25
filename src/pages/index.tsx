@@ -4,6 +4,12 @@ import styled from "styled-components";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import {
+  IdentityModal,
+  useIdentityContext,
+} from "react-netlify-identity-widget";
+import "react-netlify-identity-widget/styles.css"; // delete if you want to bring your own CSS
+import { navigate } from "gatsby";
 
 // import SpringExample from "../components/external/spring";
 
@@ -25,62 +31,24 @@ const HeroSubTitle = styled.h2`
   font-size: 300%;
 `;
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Bast Home" />
-    <HeroTitle>Hi, user!</HeroTitle>
-    <HeroSubTitle as="h2">Want to create an account?</HeroSubTitle>
-    {/* <SpringExample /> */}
-    <Link to="/app/">
-      <b>Go to App (with Netlify Identity)</b>
-    </Link>{" "}
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit,
-      mollitia minima deserunt reprehenderit facere dolorum dicta exercitationem
-      ratione ab cum voluptatibus sed numquam asperiores aliquam quos voluptates
-      sit! Illum.
-    </p>
-    <p>
-      Iusto odit ipsum rem ut cum asperiores optio alias quisquam dolores facere
-      veniam nihil ducimus explicabo earum deserunt architecto, obcaecati
-      praesentium aperiam, laudantium corrupti odio fugiat. Illum provident est
-      voluptates.
-    </p>
-    <p>
-      Exercitationem iusto similique reprehenderit a ullam laudantium mollitia,
-      quidem earum vitae distinctio eaque corrupti dolores accusamus magnam
-      omnis iure libero perspiciatis ex odio? Numquam enim vitae, facilis
-      asperiores ipsam facere!
-    </p>
-    <p>
-      Dolorum iste exercitationem fuga temporibus laboriosam. Officiis dolorem
-      accusamus iure, adipisci ex iusto asperiores amet cupiditate earum quae
-      laudantium nesciunt. Ducimus exercitationem possimus quos placeat sed
-      reiciendis ea, quasi esse.
-    </p>
-    <p>
-      Saepe qui, tempora dolorem laboriosam quidem velit modi ex repellat
-      accusamus reiciendis commodi distinctio sunt itaque excepturi aperiam
-      consequatur, id laudantium eligendi sed. Consequuntur saepe deserunt nulla
-      sint tempore consequatur?
-    </p>
-    <p>
-      Et unde ab reiciendis incidunt tenetur iure possimus, enim quam fugit,
-      blanditiis, necessitatibus dolor. Labore molestiae quibusdam aperiam
-      recusandae, culpa vitae libero voluptatibus aspernatur, non, blanditiis
-      est. Nulla, quis explicabo?
-    </p>
-    <p>
-      Rem mollitia velit consequuntur? Veritatis iure alias mollitia dolor
-      nulla! Soluta officiis possimus et veritatis, nobis accusantium sunt
-      assumenda, ipsum quod, neque atque! Dignissimos quos perferendis voluptate
-      quaerat minima iste!
-    </p>
-    {/* <Container>Styled component</Container> */}
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-);
+const IndexPage = () => {
+  const identity = useIdentityContext();
+  const [dialog, setDialog] = React.useState(false);
+  return (
+    <Layout>
+      <SEO title="Bast Home" />
+      <HeroTitle>Hi, user!</HeroTitle>
+      <HeroSubTitle as="h2">Want to create an account?</HeroSubTitle>
+      {/* <SpringExample /> */}
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit,
+        mollitia minima deserunt reprehenderit facere dolorum dicta
+        exercitationem ratione ab cum voluptatibus sed numquam asperiores
+        aliquam quos voluptates sit! Illum.
+      </p>
+      <Link to="/app/">Create an account</Link>
+    </Layout>
+  );
+};
 
 export default IndexPage;

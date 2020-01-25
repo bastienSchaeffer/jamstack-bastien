@@ -1,5 +1,7 @@
 import React from "react";
 import { navigate } from "gatsby";
+import { Button, ButtonDanger, ButtonWarn } from "../components/ui/Button";
+import styled from "styled-components";
 
 import {
   IdentityModal,
@@ -12,9 +14,14 @@ function Login() {
   const [dialog, setDialog] = React.useState(false);
   return (
     <>
-      <h1>Log in</h1>
-      <button onClick={() => setDialog(true)}>log in</button>
-
+      {/* <Button>Click me</Button>
+      <Button primary>Primary</Button>
+      <Button>Rounded</Button>
+      <ButtonDanger>danger</ButtonDanger>
+      <ButtonWarn>warn</ButtonWarn>
+      <Button primary>Primary</Button>
+      <ButtonWarn data-testid="buttonWarnId">warn</ButtonWarn> */}
+      <ButtonDanger onClick={() => setDialog(true)}>LOGIN</ButtonDanger>
       <IdentityModal
         showDialog={dialog}
         onCloseDialog={() => setDialog(false)}

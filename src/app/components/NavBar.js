@@ -3,7 +3,7 @@ import { Link, navigate } from "gatsby";
 
 import { useIdentityContext } from "react-netlify-identity-widget";
 
-export default () => {
+const NavBar = () => {
   const { user, isLoggedIn, logoutUser } = useIdentityContext();
   const message = isLoggedIn
     ? `Hello, ${user.user_metadata && user.user_metadata.full_name}`
@@ -16,32 +16,12 @@ export default () => {
         flex: "1",
         justifyContent: "space-between",
         borderBottom: "1px solid #d1c1e0",
-        backgroundColor: "aliceblue",
+        marginBottom: "50px",
       }}
     >
-      <span>{message}</span>
-
-      <nav>
-        <span>Navigate the app: </span>
-        <Link to="/app/">Main</Link>
-        {` `}
-        <Link to="/app/profile">Profile</Link>
-        {` `}
-        {isLoggedIn ? (
-          <a
-            href="/"
-            onClick={async event => {
-              event.preventDefault();
-              await logoutUser();
-              navigate(`/app/login`);
-            }}
-          >
-            Logout
-          </a>
-        ) : (
-            <Link to="/app/login">Login</Link>
-          )}
-      </nav>
+      <h1>{message}</h1>
     </div>
   );
 };
+
+export default NavBar;

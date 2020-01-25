@@ -1,9 +1,10 @@
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import React, { useEffect, useState } from "react";
 import Wrapper from "./ui/Wrapper";
 import Container from "./ui/Container";
 import { throttle } from "lodash";
 import styled, { css } from "styled-components";
+import { useIdentityContext } from "react-netlify-identity-widget";
 
 import logo from "../images/logo-black.svg";
 
@@ -21,7 +22,7 @@ const WrapperHeader = styled(Wrapper)`
   padding: 1.45rem 1.0875rem;
 
   img {
-    max-width: 8%;
+    width: 70px;
   }
 
   ${props =>
@@ -31,7 +32,7 @@ const WrapperHeader = styled(Wrapper)`
       padding: 0.3rem 0.3rem;
       color: #000;
       img {
-        max-width: 5%;
+        width: 50px;
       }
     `}
 `;
@@ -39,21 +40,40 @@ interface Props {
   siteTitle: string;
 }
 
-const Nav = styled.ul`
-  list-style-type: none;
-  display: inline-block;
-  position: absolute;
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* position: absolute;
   right: 0;
-  top: 40px;
-
+  top: 40px; */
+  ul {
+    list-style-type: none;
+    display: inline-block;
+  }
   li {
     display: inline-block;
-    :not(last-child) {
+    :not(:last-child) {
       margin-right: 3em;
+    }
+
+    a {
+      color: black;
+      text-decoration: none;
     }
   }
 `;
+
+const SubNav = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+`;
+
 const Header: React.FC<Props> = ({ siteTitle = "" }) => {
+  // {siteTitle}
+  const { user, isLoggedIn, logoutUser } = useIdentityContext();
+
   const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
   function handleDocumentScroll() {
@@ -74,7 +94,8 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
   return (
     <WrapperHeader as="header" sticky={shouldShowShadow}>
       <Container>
-        {/* <h1 style={{ margin: 0 }} data-testid="hero-title">
+        <Nav>
+          {/* <h3>{isLoggedIn ? "loged in" : "logde out"}</h3> */}
           <Link
             to="/"
             style={{
@@ -82,24 +103,45 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
               textDecoration: `none`,
             }}
           >
-            {siteTitle}
+            <img src={logo} alt="Logo" width="70" />
           </Link>
-        </h1> */}
-
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          <img src={logo} alt="Logo" />
-        </Link>
-        <Nav>
-          <li>ABOUT</li>
-          <li>CONTACTS</li>
-          <li>LOGIN</li>
+          <ul>
+            <li>
+              <Link to="/">
+                <b>HOME</b>
+              </Link>
+            </li>
+            <li>
+              <Link to="/app/">
+                <b>ACCOUNT</b>
+              </Link>
+            </li>
+          </ul>
         </Nav>
+        {isLoggedIn && (
+          <SubNav>
+            <nav>
+              <Link to="/app/">Main</Link>
+              {` `}
+              <Link to="/app/profile">Profile</Link>
+              {` `}
+              {isLoggedIn ? (
+                <a
+                  href="/"
+                  onClick={async event => {
+                    event.preventDefault();
+                    await logoutUser();
+                    navigate(`/app/login`);
+                  }}
+                >
+                  Logout
+                </a>
+              ) : (
+                  <Link to="/app/login">Login</Link>
+                )}
+            </nav>
+          </SubNav>
+        )}
       </Container>
     </WrapperHeader>
   );
