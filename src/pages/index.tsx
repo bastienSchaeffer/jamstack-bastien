@@ -28,7 +28,6 @@ const HeadPage = styled.header`
 const IndexPage = () => {
   const identity = useIdentityContext();
   const [lambdaData, setLambdaData] = useState();
-
   useEffect(() => {
     fetch("/.netlify/functions/hello-world")
       .then(data => data.json())
@@ -58,7 +57,7 @@ const IndexPage = () => {
         <p>
           <b>{lambdaData}</b>
         </p>
-        <StyledLink to="/app/" alt="Create an account" button>
+        <StyledLink to="/app/" alt="Create an account" button="true">
           Create an account
         </StyledLink>
       </section>

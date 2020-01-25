@@ -42,9 +42,6 @@ export const GlobalStyle = createGlobalStyle`
     `}
   } */
 
-
-  
-
   
   a {
     color: ${theme.colors.info};

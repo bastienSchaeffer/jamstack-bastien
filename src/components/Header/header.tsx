@@ -134,7 +134,7 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
                 <li>
                   {isLoggedIn ? (
                     <StyledLink
-                      href="/"
+                      to="/"
                       onClick={async event => {
                         event.preventDefault();
                         await logoutUser();
