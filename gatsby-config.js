@@ -15,7 +15,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify-identity`,
       options: {
-        url: "https://YOUR_AWESOME_SITE_INSTANCE_HERE.netlify.com",
+        url: "https://jamstack-bastien.netlify.com",
       },
     },
   ],

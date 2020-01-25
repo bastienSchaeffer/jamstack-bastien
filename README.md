@@ -1,5 +1,5 @@
-# gatsby-typescript-app-starter
+# JAMSTACK
 
 ```
-gatsby new myapp https://github.com/benawad/gatsby-typescript-app-starter
+Gatsby / Lambda
 ```
