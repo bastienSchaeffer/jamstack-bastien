@@ -33,7 +33,8 @@ export const Button = styled.button`
 `;
 
 export const ButtonDanger = styled(Button)`
-  background: ${({ theme }) => theme.colors.danger};
+  background: ${({ theme }) => theme.colors.dangerDark};
+  background: red;
   :hover {
     background: ${({ theme }) => theme.colors.dangerLight};
   }

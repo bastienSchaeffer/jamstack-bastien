@@ -21,7 +21,9 @@ function Login() {
       <ButtonWarn>warn</ButtonWarn>
       <Button primary>Primary</Button>
       <ButtonWarn data-testid="buttonWarnId">warn</ButtonWarn> */}
-      <ButtonDanger onClick={() => setDialog(true)}>LOGIN</ButtonDanger>
+      <Button onClick={() => setDialog(true)} primary>
+        LOGIN
+      </Button>
       <IdentityModal
         showDialog={dialog}
         onCloseDialog={() => setDialog(false)}

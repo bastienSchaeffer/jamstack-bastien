@@ -41,7 +41,7 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 22px;
     `}
   } */
-
+          
   
   a {
     color: ${theme.colors.info};
