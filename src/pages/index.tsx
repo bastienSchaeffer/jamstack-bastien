@@ -31,6 +31,9 @@ const IndexPage = () => (
     <HeroTitle>Hi, user!</HeroTitle>
     <HeroSubTitle as="h2">Want to create an account?</HeroSubTitle>
     {/* <SpringExample /> */}
+    <Link to="/app/">
+      <b>Go to App (with Netlify Identity)</b>
+    </Link>{" "}
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore fugit,
       mollitia minima deserunt reprehenderit facere dolorum dicta exercitationem
