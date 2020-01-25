@@ -8,12 +8,23 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { ThemeProvider } from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "../styles/GlobalStyle";
 import theme from "../styles/Theme";
 
-import Header from "./header";
+import Header from "./Header/header";
 import Footer from "./footer";
+
+const WrapperVert = styled.div`
+  /* display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  > div,
+  header,
+  footer {
+    border: solid 1px black;
+  } */
+`;
 
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,19 +41,22 @@ const Layout: React.FC = ({ children }) => {
     <>
       <GlobalStyle theme="light" />
       <ThemeProvider theme={theme}>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `230px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-            // minHeight: `calc(100vh - 400px)`,
-          }}
-        >
-          <main>{children}</main>
-        </div>
-        <Footer />
+        <WrapperVert>
+          <Header siteTitle={data.site.siteMetadata.title} />
+          <div
+            style={{
+              margin: `200px auto 0`,
+              maxWidth: 960,
+              padding: `0 1.0875rem 1.45rem`,
+              paddingTop: 0,
+              paddingBottom: "200px",
+              // minHeight: `calc(100vh - 200px)`,
+            }}
+          >
+            <main>{children}</main>
+          </div>
+          <Footer />
+        </WrapperVert>
       </ThemeProvider>
     </>
   );

@@ -1,18 +1,18 @@
 import { Link, navigate } from "gatsby";
 import React, { useEffect, useState } from "react";
-import Wrapper from "./ui/Wrapper";
-import Container from "./ui/Container";
+import StyledLink from "../ui/Links";
+import Wrapper from "../ui/Wrapper";
+import Container from "../ui/Container";
 import { throttle } from "lodash";
 import styled, { css } from "styled-components";
 import { useIdentityContext } from "react-netlify-identity-widget";
 
-import logo from "../images/logo-black.svg";
+import logo from "../../images/logo-black.svg";
 
 const WrapperHeader = styled(Wrapper)`
-  /* background: red; */
   position: fixed;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
   transition: all 0.35s ease;
   background: rgba(255, 255, 255, 0);
   top: 0;
@@ -44,9 +44,7 @@ const Nav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* position: absolute;
-  right: 0;
-  top: 40px; */
+
   ul {
     list-style-type: none;
     display: inline-block;
@@ -54,12 +52,7 @@ const Nav = styled.nav`
   li {
     display: inline-block;
     :not(:last-child) {
-      margin-right: 3em;
-    }
-
-    a {
-      color: black;
-      text-decoration: none;
+      margin-right: 1em;
     }
   }
 `;
@@ -68,6 +61,9 @@ const SubNav = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 80%;
 `;
 
 const Header: React.FC<Props> = ({ siteTitle = "" }) => {
@@ -81,7 +77,9 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
       document.documentElement || document.body;
     setShouldShowShadow(currentScrollTop > 20);
   }
+
   const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 50);
+
   useEffect(() => {
     window.addEventListener("scroll", handleDocumentScrollThrottled);
 
@@ -89,57 +87,55 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
       window.removeEventListener("scroll", handleDocumentScrollThrottled);
   }, []);
 
-  // const shadowStyle = shouldShowShadow ? "shadow" : "";
-
   return (
     <WrapperHeader as="header" sticky={shouldShowShadow}>
       <Container>
         <Nav>
-          {/* <h3>{isLoggedIn ? "loged in" : "logde out"}</h3> */}
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
+          <Link to="/">
             <img src={logo} alt="Logo" width="70" />
           </Link>
           <ul>
             <li>
-              <Link to="/">
+              <StyledLink to="/">
                 <b>HOME</b>
-              </Link>
+              </StyledLink>
             </li>
             <li>
-              <Link to="/app/">
+              <StyledLink to="/app/">
                 <b>ACCOUNT</b>
-              </Link>
+              </StyledLink>
             </li>
           </ul>
         </Nav>
+
         {isLoggedIn && (
           <SubNav>
-            <nav>
-              <Link to="/app/">Main</Link>
-              {` `}
-              <Link to="/app/profile">Profile</Link>
-              {` `}
-              {isLoggedIn ? (
-                <a
-                  href="/"
-                  onClick={async event => {
-                    event.preventDefault();
-                    await logoutUser();
-                    navigate(`/app/login`);
-                  }}
-                >
-                  Logout
-                </a>
-              ) : (
-                  <Link to="/app/login">Login</Link>
-                )}
-            </nav>
+            <Nav>
+              <ul>
+                <li>
+                  <StyledLink to="/app/">Main</StyledLink>
+                </li>
+                <li>
+                  <StyledLink to="/app/profile">Profile</StyledLink>
+                </li>
+                <li>
+                  {isLoggedIn ? (
+                    <StyledLink
+                      href="/"
+                      onClick={async event => {
+                        event.preventDefault();
+                        await logoutUser();
+                        navigate(`/`);
+                      }}
+                    >
+                      Logout
+                    </StyledLink>
+                  ) : (
+                      <StyledLink to="/app/login">Login</StyledLink>
+                    )}
+                </li>
+              </ul>
+            </Nav>
           </SubNav>
         )}
       </Container>

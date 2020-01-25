@@ -1,11 +1,11 @@
 // Docs on event and context https://www.netlify.com/docs/functions/#the-handler-method
 exports.handler = async (event, context) => {
   try {
-    const subject = event.queryStringParameters.name || "World";
+    const subject = event.queryStringParameters.name || "Lambda: ";
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: `Hello ${subject}, take your lambda function`,
+        message: `${subject}: function retrieved`,
       }),
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },

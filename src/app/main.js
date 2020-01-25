@@ -1,7 +1,13 @@
 import React from "react";
-
+import { Button } from "../components/ui/Button";
 import { useIdentityContext } from "react-netlify-identity-widget";
+import styled, { css } from "styled-components";
 
+const Pre = styled.pre`
+  padding: 0.5em;
+  background: white;
+  overflow: auto;
+`;
 function Main() {
   const [data, setData] = React.useState(null);
   const [loading, setLoading] = React.useState(false);
@@ -41,12 +47,13 @@ function Main() {
         <li>ID: {user.id}</li>
       </ul>
       <hr />
+      <br />
 
-      <button onClick={handleClick}>
+      <Button onClick={handleClick} primary>
         {loading ? "Loading..." : "Call Lambda Function"}
-      </button>
-      {err && <pre>{JSON.stringify(err, null, 2)}</pre>}
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      </Button>
+      {err && <Pre>{JSON.stringify(err, null, 2)}</Pre>}
+      <Pre>{JSON.stringify(data, null, 2)}</Pre>
     </>
   );
 }

@@ -9,6 +9,7 @@ export const Button = styled.button`
   color: ${({ theme }) => theme.colors.light};
   display: inline-block;
   font-weight: 500;
+  outline: none;
 
   user-select: none;
   border: 1px solid transparent;
@@ -23,9 +24,10 @@ export const Button = styled.button`
   ${props =>
     props.primary &&
     css`
-      background: ${({ theme }) => theme.colors.accent};
+      background: ${({ theme }) => theme.colors.darkLight};
+      color: ${({ theme }) => theme.colors.light};
       :hover {
-        background: ${({ theme }) => theme.colors.accentLight};
+        background: ${({ theme }) => theme.colors.darkDark};
       }
     `}
 `;
