@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import breakpoint from "styled-components-breakpoint";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -15,7 +16,13 @@ const HeroSubTitle = styled.h2`
 `;
 
 const HeadPage = styled.header`
-  font-size: 250%;
+  font-size: 160%;
+  ${breakpoint("tablet")`
+    font-size: 200%;
+  `}
+  ${breakpoint("desktop")`
+    font-size: 250%;
+  `}
 `;
 
 const IndexPage = () => {

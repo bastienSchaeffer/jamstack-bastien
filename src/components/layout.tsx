@@ -45,7 +45,7 @@ const Layout: React.FC = ({ children }) => {
           <Header siteTitle={data.site.siteMetadata.title} />
           <div
             style={{
-              margin: `200px auto 0`,
+              margin: `250px auto 0`,
               maxWidth: 960,
               padding: `0 1.0875rem 1.45rem`,
               paddingTop: 0,

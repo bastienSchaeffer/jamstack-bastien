@@ -7,22 +7,27 @@ import { throttle } from "lodash";
 import styled, { css } from "styled-components";
 import { useIdentityContext } from "react-netlify-identity-widget";
 
-import logo from "../../images/logo-black.svg";
+import logo from "../../images/logo-black-large.svg";
 
 const WrapperHeader = styled(Wrapper)`
   position: fixed;
   width: 100%;
   z-index: 100;
-  transition: all 0.35s ease;
+  /* transition: all 0.35s ease; */
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   background: rgba(255, 255, 255, 0);
   top: 0;
   left: 0;
   right: 0;
   color: #555;
-  padding: 1.45rem 1.0875rem;
+  padding: 1.45rem 0 0;
+  box-shadow: rgba(0, 0, 0, 0) 0px 0.625rem 1.25rem,
+    rgba(0, 0, 0, 0) 0px 0.375rem 0.375rem;
 
-  img {
-    width: 70px;
+  .logo {
+    /* transition: all 0.5s ease; */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 80px;
   }
 
   ${props =>
@@ -31,8 +36,10 @@ const WrapperHeader = styled(Wrapper)`
       background: rgba(255, 255, 255, 0.98);
       padding: 0.3rem 0.3rem;
       color: #000;
-      img {
-        width: 50px;
+      box-shadow: rgba(0, 0, 0, 0.04) 0px 0.4rem 1.25rem,
+        rgba(0, 0, 0, 0.06) 0px 0.2rem 0.2rem;
+      .logo {
+        width: 60px;
       }
     `}
 `;
@@ -66,6 +73,10 @@ const SubNav = styled.div`
   font-size: 80%;
 `;
 
+const ContainerHeader = styled(Container)`
+  padding-bottom: 0;
+`;
+
 const Header: React.FC<Props> = ({ siteTitle = "" }) => {
   // {siteTitle}
   const { user, isLoggedIn, logoutUser } = useIdentityContext();
@@ -89,11 +100,13 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
 
   return (
     <WrapperHeader as="header" sticky={shouldShowShadow}>
-      <Container>
+      <ContainerHeader>
         <Nav>
-          <Link to="/">
-            <img src={logo} alt="Logo" width="70" />
-          </Link>
+          <div className="logo">
+            <Link to="/">
+              <img src={logo} alt="Logo" />
+            </Link>
+          </div>
           <ul>
             <li>
               <StyledLink to="/">
@@ -138,7 +151,7 @@ const Header: React.FC<Props> = ({ siteTitle = "" }) => {
             </Nav>
           </SubNav>
         )}
-      </Container>
+      </ContainerHeader>
     </WrapperHeader>
   );
 };

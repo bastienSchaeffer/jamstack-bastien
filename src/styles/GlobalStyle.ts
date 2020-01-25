@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import theme from "./Theme";
 import reset from "./reset";
+import breakpoint from "styled-components-breakpoint";
 
 export const GlobalStyle = createGlobalStyle`
   
@@ -30,12 +31,31 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     line-height: 1.5;
   }
+
+  /* html {
+  font-size: 14px;
+    ${breakpoint("tablet")`
+      font-size: calc(16px + 3 * ((100vw - 320px) / 680));
+    `}
+    ${breakpoint("desktop")`
+      font-size: 22px;
+    `}
+  } */
+
+
+  
+
   
   a {
     color: ${theme.colors.info};
     :hover, :active, :focus{
       color: ${theme.colors.infoDark};
     }
+  }
+
+  img{
+    max-width:100%;
+    height: auto;
   }
 
   [data-reach-dialog-overlay] {
