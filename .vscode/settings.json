@@ -9,10 +9,11 @@
     "**/node_modules": true,
     "**/public": true
   },
-  "editor.rulers": [80],
+  "editor.rulers": [
+    80
+  ],
   "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "eslint.autoFixOnSave": true,
+  "eslint.autoFixOnSave": false,
   "eslint.validate": [
     {
       "language": "javascript",

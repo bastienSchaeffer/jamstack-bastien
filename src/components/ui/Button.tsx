@@ -1,6 +1,11 @@
 import styled, { css } from "styled-components";
 
-export const Button = styled.button`
+interface ButtonProps {
+  readonly primary?: boolean;
+  readonly round?: boolean;
+}
+
+export const Button = styled.button<ButtonProps>`
   background: rgba(120, 130, 140, 0.13);
   min-width: 7rem;
   padding: 0.5rem 1rem;

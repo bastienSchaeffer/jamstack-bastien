@@ -1,20 +1,13 @@
 import { useEffect, useState } from "react";
 import { throttle } from "lodash";
 
-function useDocumentScrollThrottled(callback) {
-  const [, setScrollPosition] = useState(0);
-  let previousScrollTop = 0;
+const useStickMode = () => {
+  const [shouldShowShadow, setShouldShowShadow] = useState(false);
 
   function handleDocumentScroll() {
     const { scrollTop: currentScrollTop } =
       document.documentElement || document.body;
-
-    setScrollPosition(previousPosition => {
-      previousScrollTop = previousPosition;
-      return currentScrollTop;
-    });
-
-    callback({ previousScrollTop, currentScrollTop });
+    setShouldShowShadow(currentScrollTop > 20);
   }
 
   const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 50);
@@ -25,6 +18,8 @@ function useDocumentScrollThrottled(callback) {
     return () =>
       window.removeEventListener("scroll", handleDocumentScrollThrottled);
   }, []);
-}
 
-export default useDocumentScrollThrottled;
+  return [shouldShowShadow];
+};
+
+export default useStickMode;

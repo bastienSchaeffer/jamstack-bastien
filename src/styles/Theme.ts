@@ -1,4 +1,7 @@
 const theme = {
+  size: {
+    maxWidth: "1200px",
+  },
   colors: {
     // -- primary
     primaryLight: "#0dceb5",

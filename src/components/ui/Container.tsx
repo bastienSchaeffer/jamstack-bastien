@@ -1,9 +1,8 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
-  /* background: ${({ theme }) => theme.colors.dark}; */
   margin: 0 auto;
-  max-width: 960px;
+  max-width: ${({ theme }) => theme.size.maxWidth};
   padding: 1.45rem 1.0875rem;
   position: relative;
 `;

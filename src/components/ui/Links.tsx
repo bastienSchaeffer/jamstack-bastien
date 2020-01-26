@@ -1,8 +1,13 @@
-import { Link } from "gatsby";
+import { Link as GatsbyLink } from "gatsby";
 import styled, { css } from "styled-components";
 
-const StyledLink = styled(Link)`
-  /* font-weight: bold; */
+interface StyledLinkProps {
+  readonly button?: boolean;
+  readonly round?: boolean;
+  to?: string;
+}
+
+const StyledLink = styled(GatsbyLink)<StyledLinkProps>`
   outline: none;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.darkLight};

@@ -1,19 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "gatsby";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import breakpoint from "styled-components-breakpoint";
+import { useIdentityContext } from "react-netlify-identity-widget";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import StyledLink from "../components/ui/Links";
-import { useIdentityContext } from "react-netlify-identity-widget";
-
-const HeroTitle = styled.h1`
-  /* font-size: 500%; */
-`;
-const HeroSubTitle = styled.h2`
-  /* font-size: 300%; */
-`;
 
 const HeadPage = styled.header`
   font-size: 160%;
@@ -29,7 +21,7 @@ const IndexPage = () => {
   const identity = useIdentityContext();
   const [lambdaData, setLambdaData] = useState();
   useEffect(() => {
-    fetch("/.netlify/functions/hello-world")
+    fetch("/.netlify/functions/lambda")
       .then(data => data.json())
       .then(data => {
         setLambdaData(data.message);
@@ -47,7 +39,6 @@ const IndexPage = () => {
           <h1>Hi, user!</h1>
           <h2>Want to create an account?</h2>
         </HeadPage>
-
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           fugit, mollitia minima deserunt reprehenderit facere dolorum dicta
