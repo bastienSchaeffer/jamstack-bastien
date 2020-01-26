@@ -1,10 +1,9 @@
 import React from "react";
-import { Link, navigate } from "gatsby";
 
 import { useIdentityContext } from "react-netlify-identity-widget";
 
 const NavBar = () => {
-  const { user, isLoggedIn, logoutUser } = useIdentityContext();
+  const { user, isLoggedIn } = useIdentityContext();
   const message = isLoggedIn
     ? `Hello, ${user.user_metadata && user.user_metadata.full_name}`
     : "You are not logged in";

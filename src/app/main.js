@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "../components/ui/Button";
 import { useIdentityContext } from "react-netlify-identity-widget";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 const Pre = styled.pre`
   padding: 0.5em;
@@ -31,9 +31,7 @@ function Main() {
       })
       .catch(err => {
         if (window.location.origin === "http://localhost:8000")
-          setErr(
-            'your origin is "http://localhost:8000". You are likely not using Netlify Dev so the functions server isnt running. Please read the docs, use Netlify Dev, and go to http://localhost:8888'
-          );
+          setErr('"http://localhost:8000" => "http://localhost:8888"');
         else setErr(err);
         throw err;
       });
