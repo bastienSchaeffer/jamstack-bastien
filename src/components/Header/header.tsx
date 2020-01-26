@@ -76,7 +76,7 @@ const Header: React.FC<Props> = () => {
       <ContainerHeader>
         <Nav data-testid="navigation-main">
           <div className="logo">
-            <Link to="/" alt="Link to Homepage">
+            <Link to="/" title="Link to Homepage">
               <Logo name="logo" width={"100%"} fill={"black"} />
             </Link>
           </div>
