@@ -9,6 +9,8 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         minify: true,
+        ssr: true,
+        displayName: false,
         transpileTemplateLiterals: false,
       },
     },

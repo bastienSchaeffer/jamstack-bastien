@@ -24,6 +24,29 @@ const Nav = styled.nav`
       margin-right: 1em;
     }
   }
+
+  .submenu {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .submenu-item {
+    padding: 15px;
+  }
+  .submenu-top {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .submenu-bottom {
+    display: flex;
+  }
+  .submenu-bottom-item {
+    flex: 1;
+  }
 `;
 
 const SubNav = styled.div`
@@ -53,8 +76,8 @@ const Header: React.FC<Props> = () => {
       <ContainerHeader>
         <Nav data-testid="navigation-main">
           <div className="logo">
-            <Link to="/">
-              <Logo name="logo" width={"100%"} className="basbabs" />
+            <Link to="/" alt="Link to Homepage">
+              <Logo name="logo" width={"100%"} fill={"black"} />
             </Link>
           </div>
           <ul>
@@ -67,6 +90,18 @@ const Header: React.FC<Props> = () => {
               <StyledLink to="/app/">
                 <b>ACCOUNT</b>
               </StyledLink>
+              {/*  */}
+              {/* <ul className="submenu">
+                <li className="submenu-item">
+                  <ul className="submenu-top">
+                    <li className="submenu-top-item">SUBNAV 1</li>
+                    <li className="submenu-top-item">SUBNAV 2</li>
+                    <li className="submenu-top-item">SUBNAV 3</li>
+                    <li className="submenu-top-item">SUBNAV 4</li>
+                  </ul>
+                </li>
+              </ul> */}
+              {/*  */}
             </li>
           </ul>
         </Nav>
