@@ -5,7 +5,7 @@ import { useIdentityContext } from "react-netlify-identity-widget";
 import { fireEvent, cleanup } from "@testing-library/react";
 import { navigate } from "gatsby";
 import { render } from "../../testUtils";
-import Header from "../Header/Header";
+import Header from "../Header/header";
 
 // --------------------- Mocks
 (useIdentityContext as any) = jest.fn(() => ({

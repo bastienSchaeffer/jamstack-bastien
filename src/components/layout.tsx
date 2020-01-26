@@ -12,7 +12,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 import { GlobalStyle } from "../styles/GlobalStyle";
 import theme from "../styles/Theme";
-import Header from "./Header/Header";
+import Header from "./Header/header";
 import Container from "../components/ui/Container";
 import Footer from "./footer";
 
