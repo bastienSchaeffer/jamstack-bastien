@@ -5,6 +5,8 @@
 // //       "transpileTemplateLiterals": false
 // //     }]
 // //   ]
+// "transpileTemplateLiterals": false,
+// "pure": true
 // // }
 {
   "plugins": [
@@ -13,9 +15,7 @@
       {
         "minify": true,
         "ssr": false,
-        "displayName": false,
-        "transpileTemplateLiterals": false,
-        "pure": true
+        "displayName": false
       }
     ],
     "@babel/plugin-proposal-optional-chaining",
