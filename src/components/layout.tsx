@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
+import breakpoint from "styled-components-breakpoint";
 
 import { GlobalStyle } from "../styles/GlobalStyle";
 import theme from "../styles/Theme";
@@ -17,8 +18,14 @@ import Container from "../components/ui/Container";
 import Footer from "./footer";
 
 const ContainerMain = styled(Container)`
-  margin: 250px auto 0;
+  margin: 150px auto 0;
   padding-bottom: 200px;
+  ${breakpoint("tablet")`
+    margin-top: 180px;
+  `}
+  ${breakpoint("desktop")`
+    margin-top: 200px;
+  `}
 `;
 const Layout: React.FC = ({ children }) => {
   const data = useStaticQuery(graphql`

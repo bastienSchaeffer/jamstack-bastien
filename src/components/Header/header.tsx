@@ -6,7 +6,8 @@ import { useIdentityContext } from "react-netlify-identity-widget";
 import StyledLink from "../ui/Links";
 import Container from "../ui/Container";
 import WrapperHeader from "./WrapperHeader";
-import Logo from "../../icons";
+// import Logo from "../../icons";
+import logo from "../../images/logo-black-large.svg";
 
 // ---------------------- Styles: @todo:remove
 const Nav = styled.nav`
@@ -77,7 +78,8 @@ const Header: React.FC<Props> = () => {
         <Nav data-testid="navigation-main">
           <div className="logo">
             <Link to="/" title="Link to Homepage">
-              <Logo name="logo" width={"100%"} fill={"black"} />
+              {/* <Logo name="logo" width={"100%"} fill={"black"} /> */}
+              <img src={logo} alt="Logo" />
             </Link>
           </div>
           <ul>
