@@ -14,9 +14,7 @@ const Footer: React.FC = () => {
   return (
     <WrapperFooter as="footer" primary>
       <Container>
-        <span>
-          © {new Date().getFullYear()} - https://jamstack-bastien.netlify.com/
-        </span>
+        <span>© {new Date().getFullYear()} - Footer</span>
       </Container>
     </WrapperFooter>
   );

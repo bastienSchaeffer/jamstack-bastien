@@ -21,7 +21,7 @@ const WrapperHeader = styled(Wrapper)<WrapperHeaderProps>`
 
   .logo {
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    width: 80px;
+    width: 70px;
   }
 
   ${props =>
@@ -33,7 +33,7 @@ const WrapperHeader = styled(Wrapper)<WrapperHeaderProps>`
       box-shadow: rgba(0, 0, 0, 0.04) 0px 0.4rem 1.25rem,
         rgba(0, 0, 0, 0.06) 0px 0.2rem 0.2rem;
       .logo {
-        width: 60px;
+        width: 40px;
       }
     `}
 `;

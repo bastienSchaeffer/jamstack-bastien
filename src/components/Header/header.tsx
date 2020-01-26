@@ -7,7 +7,7 @@ import StyledLink from "../ui/Links";
 import Container from "../ui/Container";
 import WrapperHeader from "./WrapperHeader";
 // import Logo from "../../icons";
-import logo from "../../images/logo-black-large.svg";
+import logo from "../../images/logo-50.svg";
 
 // ---------------------- Styles: @todo:remove
 const Nav = styled.nav`
