@@ -1,0 +1,35 @@
+// // {
+// //   "plugins": [
+// //     ["babel-plugin-styled-components", {
+// //       "minify": true,
+// //       "transpileTemplateLiterals": false
+// //     }]
+// //   ]
+// // }
+{
+  "plugins": [
+    [
+      "babel-plugin-styled-components",
+      {
+        "minify": true,
+        "ssr": false,
+        "displayName": false,
+        "transpileTemplateLiterals": false,
+        "pure": true
+      }
+    ],
+    "@babel/plugin-proposal-optional-chaining",
+    // "styled-components",
+  ],
+  "presets": [
+    [
+      "babel-preset-gatsby",
+      {
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ]
+  ]
+}
+
