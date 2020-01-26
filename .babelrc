@@ -15,7 +15,7 @@
       {
         "minify": true,
         "ssr": false,
-        "displayName": true
+        "displayName": false
       }
     ],
     "@babel/plugin-proposal-optional-chaining",
