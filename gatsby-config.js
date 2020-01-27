@@ -5,14 +5,14 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    // {
-    //   resolve: `gatsby-plugin-styled-components`,
-    //   options: {
-    //     minify: true,
-    //     displayName: false,
-    //     transpileTemplateLiterals: false,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        minify: true,
+        displayName: false,
+        transpileTemplateLiterals: false,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-create-client-paths`,
