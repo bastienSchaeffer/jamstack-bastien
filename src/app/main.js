@@ -39,7 +39,7 @@ function Main() {
 
   return (
     <>
-      <h1>Your Main App</h1>
+      <h2>Your Main App</h2>
       <ul>
         <li>API: {user.api && user.api.apiURL}</li>
         <li>ID: {user.id}</li>

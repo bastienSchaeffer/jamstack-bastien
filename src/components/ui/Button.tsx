@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import breakpoint from "styled-components-breakpoint";
 
 interface ButtonProps {
   readonly primary?: boolean;
@@ -13,14 +14,20 @@ export const Button = styled.button<ButtonProps>`
   line-height: 1.25;
   color: ${({ theme }) => theme.colors.light};
   display: inline-block;
-  font-weight: 500;
+  font-weight: bold;
   outline: none;
+  font-family: "Ubuntu", sans-serif;
 
   user-select: none;
   border: 1px solid transparent;
-  padding: 0.5rem 1rem;
   border-radius: ${props => (props.round ? `500px` : `.25rem`)};
   margin: 0 0.2rem 0.2rem 0;
+  ${breakpoint("tablet")`
+    padding: 0.8rem 1.2rem;
+  `}
+  ${breakpoint("desktop")`
+    padding: 1rem 3rem;
+  `}
 
   :disabled {
     opacity: 0.4;

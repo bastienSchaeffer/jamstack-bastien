@@ -5,6 +5,13 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-typescript`,
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: "src/utils/typography.js",
+      },
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -24,6 +31,5 @@ module.exports = {
         url: "https://jamstack-bastien.netlify.com",
       },
     },
-    `gatsby-plugin-typescript`,
   ],
 };

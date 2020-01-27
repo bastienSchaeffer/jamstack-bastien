@@ -1,21 +1,9 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import breakpoint from "styled-components-breakpoint";
 import { useIdentityContext } from "react-netlify-identity-widget";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import StyledLink from "../components/ui/Links";
-
-const HeadPage = styled.header`
-  font-size: 160%;
-  ${breakpoint("tablet")`
-    font-size: 200%;
-  `}
-  ${breakpoint("desktop")`
-    font-size: 250%;
-  `}
-`;
 
 const IndexPage = () => {
   const identity = useIdentityContext();
@@ -35,10 +23,8 @@ const IndexPage = () => {
         description="A simple jamstack with Gatsby and lambda functions"
       />
       <section>
-        <HeadPage>
-          <h1>Hi, user!</h1>
-          <h2>Want to create an account?</h2>
-        </HeadPage>
+        <h1>Hi, user!</h1>
+        <h2>Want to create an account?</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
           fugit, mollitia minima deserunt reprehenderit facere dolorum dicta
