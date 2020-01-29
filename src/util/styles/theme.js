@@ -167,6 +167,42 @@ const buttonSizes = {
   },
 };
 
+/**
+ * Buttons sizes
+ */
+const gatsLink = {
+  button: {
+    textDecoration: 'none',
+    display: 'inline-block',
+    marginLeft: '4px',
+    borderRadius: '4px',
+    padding: '2px 8px',
+    transition: 'all .2s ease',
+    color: 'white',
+    backgroundColor: colors.red['500'],
+    '&:hover': {
+      color: colors.red['500'],
+      backgroundColor: 'white',
+      boxShadow: `0 0 2px ${colors.red['500']}`,
+    },
+  },
+  buttonBig: {
+    textDecoration: 'none',
+    display: 'inline-block',
+    marginLeft: '4px',
+    borderRadius: '4px',
+    padding: `16px 32px`,
+    color: 'white',
+    fontSize: fontSizes[3],
+    backgroundColor: colors.red['500'],
+    '&:hover': {
+      color: colors.red['500'],
+      backgroundColor: 'white',
+      boxShadow: `0 0 2px ${colors.red['500']}`,
+    },
+  },
+};
+
 export const theme = {
   name: 'Default',
   breakpoints,
@@ -179,4 +215,5 @@ export const theme = {
   radii,
   buttons,
   buttonSizes,
+  gatsLink,
 };

@@ -22,7 +22,6 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   });
 };
 
-// You can delete this file if you're not using it
 // Implement the Gatsby API “onCreatePage”. This is
 // called after every page is created.
 exports.onCreatePage = async ({ page, actions }) => {
@@ -36,4 +35,37 @@ exports.onCreatePage = async ({ page, actions }) => {
     // Update the page.
     createPage(page);
   }
+};
+
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
+  return new Promise((resolve, reject) => {
+    graphql(`
+      {
+        allMarkdownRemark(sort: { order: ASC, fields: [frontmatter___date] }) {
+          edges {
+            node {
+              frontmatter {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `).then(results => {
+      const posts = results.data.allMarkdownRemark.edges;
+      posts.forEach(({ node }, index) => {
+        createPage({
+          path: `/posts${node.frontmatter.slug}`,
+          component: path.resolve('./src/components/Tests/PostLayout.tsx'),
+          context: {
+            slug: node.frontmatter.slug,
+            prev: index === 0 ? null : posts[index - 1].node,
+            next: index === posts.length - 1 ? null : posts[index + 1].node,
+          },
+        });
+      });
+      resolve();
+    });
+  });
 };

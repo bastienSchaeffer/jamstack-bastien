@@ -4,6 +4,9 @@ import { useIdentityContext } from 'react-netlify-identity-widget';
 import Layout from '../components/Layout/layout';
 import SEO from '../components/SEO';
 import { Link } from '../components/Link';
+import { Box } from '../components/Grid';
+
+import { Divers, Listing } from '../components/Tests';
 
 const IndexPage = () => {
   const identity = useIdentityContext();
@@ -22,7 +25,7 @@ const IndexPage = () => {
         title="Jamstack Bastien"
         description="A simple jamstack with Gatsby and lambda functions"
       />
-      <section>
+      <Box as="section" mb={4}>
         <h1>Hi, user!</h1>
         <h2>Want to create an account?</h2>
         <p>
@@ -34,10 +37,16 @@ const IndexPage = () => {
         <p>
           <b>Invoke Lambda: {lambdaData}</b>
         </p>
-        <Link to="/account/" alt="Create an account" button="true">
+        <Link to="/account/" alt="Create an account" type="buttonBig">
           Create an account
         </Link>
-      </section>
+      </Box>
+
+      <Listing />
+
+      {/* <Box as="section">
+        <Divers />
+      </Box> */}
     </Layout>
   );
 };

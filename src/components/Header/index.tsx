@@ -1,19 +1,16 @@
 /** @jsx jsx */
-// import React from 'react';
+import { jsx } from '@emotion/core';
+import { useIdentityContext } from 'react-netlify-identity-widget';
 import PropTypes from 'prop-types';
 import { Link as GatsbyLink, navigate } from 'gatsby';
-import { jsx } from '@emotion/core';
 
 import useStickMode from '../hooks/useStickMode';
-import { useIdentityContext } from 'react-netlify-identity-widget';
-
 import { Box, Flex } from '../Grid';
 import { Link } from '../Link';
-// import { Text } from '../Text';
 import logo from '../../images/logo-50.svg';
 
 type HeaderProps = {
-  siteTitle: string;
+  siteTitle?: string;
 };
 
 const styleGatsbyLink = {
@@ -45,6 +42,7 @@ const Header = ({ siteTitle }: HeaderProps) => {
       as="header"
       bg={isSticky ? 'rgba(255, 255, 255, 0.97)' : 'rgba(255, 255, 255, 0)'}
       p={isSticky ? '30px' : '50px'}
+      zIndex="1000"
       position="fixed"
       top={0}
       left={0}
@@ -81,18 +79,13 @@ const Header = ({ siteTitle }: HeaderProps) => {
             )}
           </Box>
         </Flex>
-
-        {/* <Text as="h2" color="white">
-          {siteTitle}
-        </Text> */}
-        {/* NAV */}
       </Box>
     </Box>
   );
 };
 
 Header.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
+  siteTitle: PropTypes.string,
 };
 
 export default Header;
