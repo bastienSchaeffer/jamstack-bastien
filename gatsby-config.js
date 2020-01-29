@@ -60,6 +60,6 @@ module.exports = {
       },
     },
     // Adds drop-in support for offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
   ],
 };

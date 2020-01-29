@@ -5,9 +5,13 @@
  */
 
 // You can delete this file if you're not using it
-import React from 'react';
-import { ThemeProvider } from './src/util/styles';
 
-export const wrapRootElement = ({ element }) => (
-  <ThemeProvider>{element}</ThemeProvider>
-);
+// This was used with Emotion, but was preventing to deploy:
+// @see:https://github.com/gatsbyjs/gatsby/issues/11494
+
+// import React from 'react';
+// import { ThemeProvider } from './src/util/styles';
+
+// export const wrapRootElement = ({ element }) => (
+//   <ThemeProvider>{element}</ThemeProvider>
+// );

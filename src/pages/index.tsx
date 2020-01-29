@@ -4,8 +4,6 @@ import { useIdentityContext } from 'react-netlify-identity-widget';
 import Layout from '../components/Layout/layout';
 import SEO from '../components/SEO';
 import { Link } from '../components/Link';
-import Image from '../components/Image';
-import { Box } from '../components/Grid';
 
 const IndexPage = () => {
   const identity = useIdentityContext();
