@@ -77,7 +77,7 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "npm run test && gatsby build",
+    "build": "npm run test && npm run clean && gatsby build",
     "develop": "gatsby develop",
     "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
