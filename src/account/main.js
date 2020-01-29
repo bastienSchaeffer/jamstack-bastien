@@ -47,10 +47,12 @@ function Main() {
       <hr />
       <br />
 
-      <Button onClick={handleClick} size={['medium', 'large']} variant="danger">
+      <Button onClick={handleClick} size={'medium'}>
         {loading ? 'Loading...' : 'Call Lambda Function'}
       </Button>
       {err && <Pre>{JSON.stringify(err, null, 2)}</Pre>}
+      <br />
+      <br />
       <Pre>{JSON.stringify(data, null, 2)}</Pre>
     </>
   );

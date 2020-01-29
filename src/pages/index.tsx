@@ -5,8 +5,6 @@ import Layout from '../components/Layout/layout';
 import SEO from '../components/SEO';
 import { Link } from '../components/Link';
 import Image from '../components/Image';
-import Button from '../components/Button';
-import Tests from '../components/Tests';
 import { Box } from '../components/Grid';
 
 const IndexPage = () => {
@@ -28,19 +26,6 @@ const IndexPage = () => {
       />
       <section>
         <h1>Hi, user!</h1>
-        <Tests />
-        <Button color="white" backgroundColor="tomato">
-          Button Hello, world!
-        </Button>
-        <Button>Default Button!</Button>
-        <Button variant="primary">I'm Primary Button!</Button>
-        <Button variant="danger">I'm danger!</Button>
-        <Button size={['medium', 'large']}>I'm large only</Button>
-        <Button size={['medium', 'large']} variant="danger">
-          I'm large only and danger
-        </Button>
-        <Button>Button 1</Button>
-        <Button marginLeft={2}>Button 2</Button>
         <h2>Want to create an account?</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
@@ -49,11 +34,8 @@ const IndexPage = () => {
           aliquam quos voluptates sit! Illum.
         </p>
         <p>
-          <b>{lambdaData}</b>
+          <b>Invoke Lambda: {lambdaData}</b>
         </p>
-        <Box maxWidth="300px" mb={4}>
-          <Image />
-        </Box>
         <Link to="/account/" alt="Create an account" button="true">
           Create an account
         </Link>

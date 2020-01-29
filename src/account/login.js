@@ -14,11 +14,7 @@ function Login() {
   const [dialog, setDialog] = React.useState(false);
   return (
     <>
-      <Button
-        onClick={() => setDialog(true)}
-        size={['medium', 'large']}
-        variant="danger"
-      >
+      <Button onClick={() => setDialog(true)} size={'medium'} variant="danger">
         LOGIN
       </Button>
       <IdentityModal
