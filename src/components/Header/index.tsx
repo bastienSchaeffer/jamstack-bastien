@@ -18,20 +18,19 @@ const Header = ({ siteTitle }: HeaderProps) => {
   const { isLoggedIn, logoutUser } = useIdentityContext();
   // const [isSticky] = useStickMode();
   const isSticky = false;
+  // bg={isSticky ? 'primary.400' : 'primary.600'}
   return (
-    // bg={isSticky ? 'primary.400' : 'primary.600'}
     <Box as="header">
-      {/* maxWidth="1200px"  */}
-      <Box>
+      <Box maxWidth="1200px" m="0 auto">
         <Text as="h2" color="white">
           Header: {siteTitle}
         </Text>
         <Text as="p">{isSticky ? 'isSticky' : 'not isSticky'}</Text>
-        {/* css={{ textDecoration: 'none' }}  */}
         <Link to="/" data-testid="hero-title">
           <img src={logo} alt="Logo" />
         </Link>
         {/* NAV */}
+        {/* css={{ textDecoration: 'none' }} */}
         <Link to="/" data-testid="hero-title">
           HOME NOW
         </Link>
