@@ -1,5 +1,5 @@
-import { Link as GatsbyLink } from "gatsby";
-import styled, { css } from "styled-components";
+import { Link as GatsbyLink } from 'gatsby';
+import styled, { css } from 'styled-components';
 
 interface StyledLinkProps {
   readonly button?: boolean;

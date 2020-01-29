@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { throttle } from "lodash";
+import { useEffect, useState } from 'react';
+import { throttle } from 'lodash';
 
 const useStickMode = () => {
   const [shouldShowShadow, setShouldShowShadow] = useState(false);
@@ -13,10 +13,10 @@ const useStickMode = () => {
   const handleDocumentScrollThrottled = throttle(handleDocumentScroll, 50);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleDocumentScrollThrottled);
+    window.addEventListener('scroll', handleDocumentScrollThrottled);
 
     return () =>
-      window.removeEventListener("scroll", handleDocumentScrollThrottled);
+      window.removeEventListener('scroll', handleDocumentScrollThrottled);
   }, []);
 
   return [shouldShowShadow];

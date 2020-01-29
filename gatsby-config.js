@@ -1,3 +1,5 @@
+const path = require(`path`);
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -7,11 +9,36 @@ module.exports = {
   plugins: [
     `gatsby-plugin-typescript`,
     {
-      resolve: "gatsby-plugin-typography",
+      resolve: `gatsby-source-filesystem`,
       options: {
-        pathToConfigModule: "src/utils/typography.js",
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-styled-components`,
+      options: {
+        displayName: process.env.NODE_ENV !== `production`,
+        fileName: false,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-typography",
+      options: {
+        pathToConfigModule: "./config/typography.js",
+      },
+    },
+    // `gatsby-plugin-catch-links`,
+    // `gatsby-plugin-sitemap`,
+    // {
+    //   resolve: `gatsby-plugin-google-analytics`,
+    //   options: {
+    //     trackingId: website.googleAnalyticsId,
+    //     anonymize: true,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

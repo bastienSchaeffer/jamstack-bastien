@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from "react";
-import { useIdentityContext } from "react-netlify-identity-widget";
+import React, { useState, useEffect } from 'react';
+import { useIdentityContext } from 'react-netlify-identity-widget';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import StyledLink from "../components/ui/Links";
+import Layout from '../components/Layout/layout';
+import SEO from '../components/SEO';
+import StyledLink from '../components/ui/Links';
+import Image from '../components/Image';
+import Button from '../components/Button';
+import { Box } from '../components/Grid';
 
 const IndexPage = () => {
   const identity = useIdentityContext();
   const [lambdaData, setLambdaData] = useState();
   useEffect(() => {
-    fetch("/.netlify/functions/lambda")
+    fetch('/.netlify/functions/lambda')
       .then(data => data.json())
       .then(data => {
         setLambdaData(data.message);
@@ -24,6 +27,18 @@ const IndexPage = () => {
       />
       <section>
         <h1>Hi, user!</h1>
+        <Button color="white" backgroundColor="tomato">
+          Button Hello, world!
+        </Button>
+        <Button>Default Button!</Button>
+        <Button variant="primary">I'm Primary Button!</Button>
+        <Button variant="danger">I'm danger!</Button>
+        <Button size={['medium', 'large']}>I'm large only</Button>
+        <Button size={['medium', 'large']} variant="danger">
+          I'm large only and danger
+        </Button>
+        <Button>Button 1</Button>
+        <Button marginLeft={2}>Button 2</Button>
         <h2>Want to create an account?</h2>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore
@@ -34,6 +49,9 @@ const IndexPage = () => {
         <p>
           <b>{lambdaData}</b>
         </p>
+        <Box maxWidth="300px" mb={4}>
+          <Image />
+        </Box>
         <StyledLink to="/app/" alt="Create an account" button="true">
           Create an account
         </StyledLink>

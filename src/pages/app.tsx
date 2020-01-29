@@ -13,6 +13,6 @@
 
 // export default Router;
 
-import App from "../app/app";
+import App from '../app/app';
 
 export default App;
