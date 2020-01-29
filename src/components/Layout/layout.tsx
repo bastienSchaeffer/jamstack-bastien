@@ -8,6 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Global } from '@emotion/core';
 
 import GlobalStyles from '../../util/styles/GlobalStyles';
 import { ThemeProvider, theme } from '../../util/styles';
@@ -31,7 +32,7 @@ const Layout: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <>
-        <GlobalStyles />
+        <Global styles={GlobalStyles} />
         <Header siteTitle="Gatsby Starter Styled" />
         <Box maxWidth="1200px" m="0 auto" px={3}>
           {children}

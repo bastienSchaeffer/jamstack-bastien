@@ -1,7 +1,7 @@
-import { createGlobalStyle } from './index';
+import { css } from '@emotion/core';
 import { theme } from './theme';
 
-const GlobalStyles = createGlobalStyle`
+const GlobalStyles = css`
   * {
     box-sizing: border-box;
   }
@@ -20,12 +20,13 @@ const GlobalStyles = createGlobalStyle`
   }
 
   a {
-      color: ${theme.colors.primaryB};
-      :hover, :active, :focus{
-        color: ${theme.colors.secondaryB};
-      }
-    }  
-  
+    color: ${theme.colors.primaryB};
+    :hover,
+    :active,
+    :focus {
+      color: ${theme.colors.secondaryB};
+    }
+  }
 `;
 
 export default GlobalStyles;

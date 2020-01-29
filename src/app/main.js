@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../components/Button';
 import { useIdentityContext } from 'react-netlify-identity-widget';
-import styled from 'styled-components';
+import styled from '@emotion/styled';
 
 const Pre = styled.pre`
   padding: 0.5em;

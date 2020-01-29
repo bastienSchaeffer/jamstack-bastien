@@ -7,6 +7,7 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -18,16 +19,9 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-styled-components`,
+      resolve: 'gatsby-plugin-typography',
       options: {
-        displayName: process.env.NODE_ENV !== `production`,
-        fileName: false,
-      },
-    },
-    {
-      resolve: "gatsby-plugin-typography",
-      options: {
-        pathToConfigModule: "./config/typography.js",
+        pathToConfigModule: './config/typography.js',
       },
     },
     // `gatsby-plugin-catch-links`,
@@ -39,14 +33,6 @@ module.exports = {
     //     anonymize: true,
     //   },
     // },
-    {
-      resolve: `gatsby-plugin-styled-components`,
-      options: {
-        minify: true,
-        displayName: false,
-        transpileTemplateLiterals: false,
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-create-client-paths`,
@@ -55,7 +41,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-netlify-identity`,
       options: {
-        url: "https://jamstack-bastien.netlify.com",
+        url: 'https://jamstack-bastien.netlify.com',
       },
     },
   ],

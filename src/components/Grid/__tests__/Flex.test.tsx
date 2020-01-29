@@ -1,31 +1,32 @@
 import React from 'react';
 import { render } from '../../../util/test';
-import Box from '../Box';
+import Flex from '../Flex';
 import serializer from 'jest-emotion';
 expect.addSnapshotSerializer(serializer);
 
-test('<Box> renders', () => {
-  const { getByText } = render(<Box>Hello world</Box>);
+test('<Flex> renders', () => {
+  const { getByText } = render(<Flex>Hello world</Flex>);
 
   expect(getByText(`Hello world`)).toMatchSnapshot();
+  expect(getByText(`Hello world`)).toHaveStyle(`display: flex`);
 });
 
-test('<Box> renders with props', () => {
+test('<Flex> renders with props', () => {
   const { getByText } = render(
-    <Box m={2} px={[1, 2, 3]}>
+    <Flex m={2} px={[1, 2, 3]}>
       Hello world
-    </Box>
+    </Flex>
   );
 
   expect(getByText(`Hello world`)).toMatchSnapshot();
   expect(getByText(`Hello world`)).toHaveStyle(`margin: 8px`);
 });
 
-test('<Box> renders with as prop', () => {
+test('<Flex> renders with as prop', () => {
   const { getByText } = render(
-    <Box m={2} as="header">
+    <Flex m={2} as="header">
       Hello world
-    </Box>
+    </Flex>
   );
 
   expect(getByText(`Hello world`)).toMatchSnapshot();
