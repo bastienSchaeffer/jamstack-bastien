@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 import { Link } from '../components/Link';
 import Image from '../components/Image';
 import Button from '../components/Button';
+import Tests from '../components/Tests';
 import { Box } from '../components/Grid';
 
 const IndexPage = () => {
@@ -21,12 +22,13 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      {/* <SEO
+      <SEO
         title="Jamstack Bastien"
         description="A simple jamstack with Gatsby and lambda functions"
-      /> */}
+      />
       <section>
         <h1>Hi, user!</h1>
+        <Tests />
         <Button color="white" backgroundColor="tomato">
           Button Hello, world!
         </Button>
@@ -52,7 +54,7 @@ const IndexPage = () => {
         <Box maxWidth="300px" mb={4}>
           <Image />
         </Box>
-        <Link to="/app/" alt="Create an account" button="true">
+        <Link to="/account/" alt="Create an account" button="true">
           Create an account
         </Link>
       </section>

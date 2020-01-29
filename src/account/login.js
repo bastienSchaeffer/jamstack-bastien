@@ -24,8 +24,8 @@ function Login() {
       <IdentityModal
         showDialog={dialog}
         onCloseDialog={() => setDialog(false)}
-        onLogin={user => navigate('/app/profile')}
-        onSignup={user => navigate('/app/profile')}
+        onLogin={user => navigate('/account/profile')}
+        onSignup={user => navigate('/account/profile')}
       />
     </>
   );

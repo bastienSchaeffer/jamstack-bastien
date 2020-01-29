@@ -33,19 +33,17 @@ const Layout: React.FC = ({ children }) => {
     <ThemeProvider theme={theme}>
       <>
         <Global styles={GlobalStyles} />
-        <Header siteTitle="Gatsby Starter Styled" />
+        <Header siteTitle="Jamstack" />
         <Box maxWidth="1200px" m="0 auto" px={3}>
-          {children}
-          <Box mt={3}>
-            <Footer>
-              Built with
-              {` `}
-              <OutboundLink to="https://www.gatsbyjs.org" from="footer">
-                Gatsby
-              </OutboundLink>
-            </Footer>
-          </Box>
+          <Box py={250}>{children}</Box>
         </Box>
+        <Footer>
+          Built with
+          {` `}
+          <OutboundLink to="https://www.gatsbyjs.org" from="footer">
+            Gatsby
+          </OutboundLink>
+        </Footer>
       </>
     </ThemeProvider>
   );

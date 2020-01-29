@@ -4,6 +4,6 @@
   publish = "public"
 
 [[redirects]]
-  from = "/app/*"
-  to = "/app.html"
+  from = "/account/*"
+  to = "/account.html"
   status = 200

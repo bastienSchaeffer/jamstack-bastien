@@ -27,6 +27,11 @@ const GlobalStyles = css`
       color: ${theme.colors.secondaryB};
     }
   }
+
+  img {
+    margin: 0;
+    padding: 0;
+  }
 `;
 
 export default GlobalStyles;

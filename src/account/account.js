@@ -1,24 +1,24 @@
 import React from 'react';
 import { Router } from '@reach/router';
 import Layout from '../components/Layout/layout';
-// import SEO from '../components/seo';
+import SEO from '../components/SEO';
 import NavBar from './components/NavBar';
 import Profile from './profile';
 import Main from './main';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './login';
 
-const App = () => {
+const Account = () => {
   return (
     <Layout>
-      {/* <SEO
+      <SEO
         title="Jamstack Bastien - Account"
         description="A simple jamstack with Gatsby and lambda functions"
-      /> */}
+      />
       <NavBar />
       <Router>
-        <PrivateRoute path="/app/profile" component={Profile} />
-        <PublicRoute path="/app">
+        <PrivateRoute path="/account/profile" component={Profile} />
+        <PublicRoute path="/account">
           <PrivateRoute path="/" component={Main} />
           <Login path="/login" />
         </PublicRoute>
@@ -31,4 +31,4 @@ function PublicRoute(props) {
   return <div>{props.children}</div>;
 }
 
-export default App;
+export default Account;

@@ -3,7 +3,7 @@
  *
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
-const path = require("path");
+const path = require('path');
 
 /**
  * Enable absolute imports with `/src` as root.
@@ -14,9 +14,9 @@ exports.onCreateWebpackConfig = ({ actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
-        "@style": path.resolve(__dirname, "./src/util/style"),
-        "@components": path.resolve(__dirname, "./src/components"),
-        "@test": path.resolve(__dirname, "./src/util/test"),
+        '@style': path.resolve(__dirname, './src/util/style'),
+        '@components': path.resolve(__dirname, './src/components'),
+        '@test': path.resolve(__dirname, './src/util/test'),
       },
     },
   });
@@ -30,8 +30,8 @@ exports.onCreatePage = async ({ page, actions }) => {
 
   // page.matchPath is a special key that's used for matching pages
   // only on the client.
-  if (page.path.match(/^\/app/)) {
-    page.matchPath = "/app/*";
+  if (page.path.match(/^\/account/)) {
+    page.matchPath = '/account/*';
 
     // Update the page.
     createPage(page);
