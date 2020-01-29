@@ -1,6 +1,7 @@
 import {
   BorderRadiusProps,
   BackgroundColorProps,
+  FlexboxProps,
   FontFamilyProps,
   FontSizeProps,
   FontStyleProps,
@@ -18,6 +19,7 @@ import {
 export type StyledSystemProps =
   | BorderRadiusProps
   | BackgroundColorProps
+  | FlexboxProps
   | FontFamilyProps
   | FontFamilyProps
   | FontSizeProps

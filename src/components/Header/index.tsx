@@ -9,7 +9,7 @@ import { useIdentityContext } from 'react-netlify-identity-widget';
 
 import { Box, Flex } from '../Grid';
 import { Link } from '../Link';
-import { Text } from '../Text';
+// import { Text } from '../Text';
 import logo from '../../images/logo-50.svg';
 
 type HeaderProps = {
@@ -53,8 +53,8 @@ const Header = ({ siteTitle }: HeaderProps) => {
     >
       <Box maxWidth="1200px" m="0 auto">
         <Flex alignItems="center" justifyContent="space-between">
-          <Link to="/" data-testid="navigation-main" css={{ lineHeight: 1 }}>
-            <img src={logo} alt="Logo" />
+          <Link to="/" css={{ lineHeight: 1 }}>
+            <img src={logo} alt="Logo" data-testid="navigation-main" />
           </Link>
           <Box p={3}>
             <Link to="/" data-testid="hero-title" css={styledButtonBordered}>

@@ -1,6 +1,3 @@
-//--------------------
-import React from 'react';
-// import { StyledComponentProps } from 'styled-components';
 import { StyledSystemProps } from './StyledSystemProps';
 
 import styled, {
