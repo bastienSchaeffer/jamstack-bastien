@@ -80,11 +80,13 @@
   "scripts": {
     "build": "npm run test && gatsby build",
     "develop": "gatsby develop",
+    "clean": "gatsby clean",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "lint": "eslint --ignore-path .gitignore . --ext ts --ext tsx --ext js --ext jsx",
     "test": "jest",
+    "test:watch": "jest --watch",
     "postinstall": "netlify-lambda install",
     "functions:dev": "netlify-lambda serve lambda-functions"
   },

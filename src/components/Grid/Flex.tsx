@@ -1,15 +1,18 @@
 import styled, { flexbox, propTypes } from '../../util/styles';
-
 import Box from './Box';
 
-const Flex = styled(Box)`
+type FlexProps = {
+  display?: string;
+};
+
+const Flex = styled(Box)<FlexProps>`
   ${flexbox}
 `;
 
 Flex.displayName = `Flex`;
 
 Flex.defaultProps = {
-  display: `flex`,
+  display: 'flex',
 };
 
 Flex.propTypes = {

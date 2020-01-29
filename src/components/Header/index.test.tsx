@@ -1,0 +1,63 @@
+jest.mock('react-netlify-identity-widget');
+jest.mock('gatsby');
+// jest.mock('../hooks/useStickMode');
+import { useIdentityContext } from 'react-netlify-identity-widget';
+import { fireEvent, cleanup } from '@testing-library/react';
+// import useStickMode from '../hooks/useStickMode';
+import { navigate } from 'gatsby';
+
+import * as React from 'react';
+import { render } from '../../util/test';
+import Header from '.';
+
+// --------------------- Mocks
+(useIdentityContext as any) = jest.fn(() => ({
+  isLoggedIn: false,
+  logoutUser: Promise.resolve('someSuccessData '),
+}));
+
+(navigate as any) = jest.fn(() => ({}));
+// (useStickMode as any) = jest.fn(() => ({
+//   isSticky: false,
+// }));
+
+describe(`Header`, () => {
+  afterEach(() => {
+    cleanup();
+  });
+
+  // describe(`when logged out`, () => {
+  //   it(`should contain main navigation, not the loggedin navigation`, () => {
+  //     const { getAllByTestId, queryByTestId } = render(
+  //       <Header siteTitle="Title test" />
+  //     );
+  //     expect(getAllByTestId(`navigation-main`).length).toEqual(1);
+  //     expect(queryByTestId(`navigation-loggedin`)).toBeFalsy();
+  //   });
+  // });
+
+  describe(`when logged in`, () => {
+    const logoutUser = jest.fn();
+    beforeEach(() => {
+      (useIdentityContext as any) = jest.fn(() => ({
+        isLoggedIn: true,
+        logoutUser,
+      }));
+    });
+
+    // it(`should main navigation and the loggedin navigation`, () => {
+    //   const { getAllByTestId } = render(<Header siteTitle="Title test" />);
+    //   expect(getAllByTestId(`navigation-main`).length).toEqual(1);
+    //   expect(getAllByTestId(`navigation-loggedin`).length).toEqual(1);
+    // });
+
+    it(`should contain a clickable logout link and use logoutUser method when clicked`, async () => {
+      const { getAllByTestId, getByTestId } = render(
+        <Header siteTitle="Title test" />
+      );
+      expect(getAllByTestId(`link-logout`).length).toEqual(1);
+      fireEvent.click(getByTestId(`link-logout`));
+      expect(logoutUser).toHaveBeenCalledTimes(1);
+    });
+  });
+});

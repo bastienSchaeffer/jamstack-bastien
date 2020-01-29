@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 // import GoogleAnalytics from "react-ga";
 import { Link as GatsbyLink } from 'gatsby';
 
-const Link = ({ to, from, children, className }) => (
+type LinkProps = {
+  to: string;
+  from?: string;
+  children: ReactNode;
+  className?: string;
+};
+
+const Link = ({ to, from, children, className }: LinkProps) => (
   <GatsbyLink
     to={to}
     className={className}
     onClick={() => {
-      console.log(`Link.tsx clicked`);
+      console.log(`Link.tsx clicked ${from}`);
       // GoogleAnalytics.event({
       //   category: "Link",
       //   action: `[clicked] ${from}`,

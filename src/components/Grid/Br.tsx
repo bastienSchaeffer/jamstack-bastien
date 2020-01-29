@@ -1,6 +1,10 @@
 import styled, { display, propTypes } from '../../util/styles';
 
-const Br = styled.br`
+type BrProps = {
+  display?: string;
+};
+
+const Br = styled.br<BrProps>`
   ${display}
 `;
 
