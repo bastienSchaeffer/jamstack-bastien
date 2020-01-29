@@ -42,7 +42,7 @@ const Header = ({ siteTitle }: HeaderProps) => {
       as="header"
       bg={isSticky ? 'rgba(255, 255, 255, 0.97)' : 'rgba(255, 255, 255, 0)'}
       p={isSticky ? '30px' : '50px'}
-      zIndex="1000"
+      zIndex={1000}
       position="fixed"
       top={0}
       left={0}
