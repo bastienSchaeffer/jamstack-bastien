@@ -6,6 +6,7 @@ import {
   FontSizeProps,
   FontStyleProps,
   FontWeightProps,
+  GridProps,
   LetterSpacingProps,
   LineHeightProps,
   MaxWidthProps,
@@ -25,6 +26,7 @@ export type StyledSystemProps =
   | FontSizeProps
   | FontStyleProps
   | FontWeightProps
+  | GridProps
   | MaxWidthProps
   | LetterSpacingProps
   | LineHeightProps

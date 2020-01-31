@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`button <Button> renders with props 1`] = `
+.emotion-0 {
+  border: 0;
+  outline: 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,.16);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 8px 16px;
+  margin: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+@media screen and (min-width:576px) {
+  .emotion-0 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+@media screen and (min-width:768px) {
+  .emotion-0 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+<button
+  class="emotion-0"
+>
+  Button label
+</button>
+`;
+
+exports[`button Button renders 1`] = `
+.emotion-0 {
+  border: 0;
+  outline: 0;
+  box-shadow: 0 3px 10px rgba(0,0,0,.16);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+<button
+  class="emotion-0"
+>
+  Button label
+</button>
+`;

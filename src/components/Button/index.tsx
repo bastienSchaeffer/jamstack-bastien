@@ -14,7 +14,6 @@ const buttonSize = variant({
 
 const Button = styled('button')(
   {
-    appearance: 'button',
     border: 0,
     outline: 0,
     boxShadow: '0 3px 10px rgba(0,0,0,.16)',

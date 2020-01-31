@@ -15,6 +15,50 @@ breakpoints.xl = breakpoints[3];
  * Primary: Colors to use for actionable items, such as links, buttons etc.
  * Grey: Colors for items that are not that important
  */
+export const colorsStoryBook = {
+  // -- primary
+  primaryLight: '#0dceb5',
+  primary: '#0cc2aa',
+  primaryDark: '#0bb69f',
+
+  // -- accent
+  accentLight: '#af94e0',
+  accent: '#a88add',
+  accentDark: '#a180da',
+
+  // -- warn
+  warn: '#fcc100',
+  warnLight: '#ffc60a',
+  warnDark: '#efb700',
+
+  // -- info
+  info: '#6887ff',
+  infoLight: '#7591ff',
+  infoDark: '#5b7dff',
+
+  // -- success
+  success: '#6cc788',
+  successLight: '#75cb8f',
+  successDark: '#63c381',
+
+  // -- warning
+  warning: '#f77a99',
+  warningLight: '#f886a2',
+  warningDark: '#f66e90',
+
+  // -- danger
+  danger: '#f44455',
+  dangerLight: '#f55060',
+  dangerDark: '#f3384a',
+
+  // -- dark
+  dark: '#2a2b3c',
+  darkLight: '#313347',
+  darkDark: '#252635',
+
+  // -- light
+  light: '#f8f8f8',
+};
 const colors = {
   pageBackground: 'hsl(228, 33%, 97%)',
   white: 'hsl(0, 0%, 100%)',

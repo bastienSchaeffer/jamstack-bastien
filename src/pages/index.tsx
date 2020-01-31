@@ -35,18 +35,18 @@ const IndexPage = () => {
           aliquam quos voluptates sit! Illum.
         </p>
         <p>
-          <b>Invoke Lambda: {lambdaData}</b>
+          <b>Invoke Lambda dude: {lambdaData}</b>
         </p>
         <Link to="/account/" alt="Create an account" type="buttonBig">
           Create an account
         </Link>
       </Box>
 
-      <Listing />
-
-      {/* <Box as="section">
+      <Box as="section">
         <Divers />
-      </Box> */}
+      </Box>
+
+      <Listing />
     </Layout>
   );
 };
