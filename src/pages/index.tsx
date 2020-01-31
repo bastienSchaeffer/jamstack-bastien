@@ -36,6 +36,9 @@ const IndexPage = () => {
         </p>
         <p>
           <b>Invoke Lambda dude: {lambdaData}</b>
+          <Link to="/docs/" alt="style">
+            See guide
+          </Link>
         </p>
         <Link to="/account/" alt="Create an account" type="buttonBig">
           Create an account
